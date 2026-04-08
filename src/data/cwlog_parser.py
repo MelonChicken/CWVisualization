@@ -47,7 +47,7 @@ def extract_events(log, meta_data):
     return events_df
 
 
-def parse_cwlog(path: str):
+def parse_cwlog(path: str | Path, csv_save: bool = True):
     log = load_cwlog(path)
     meta_data, session_df = extract_session_meta(log)
     events_df = extract_events(log, meta_data)
@@ -64,9 +64,9 @@ def parse_cwlog(path: str):
     # 만약 여기서 다르다면 로드 단계 점검 필요
     print(f'length of events df: {len(events_df)}')
     print(f'recorded events: {session_df.loc[0, 'eventCount']}')
-
-    # csv로 저장하기
-    session_df.to_csv(f'res/csv/[csv_raw_session]_{session_df.loc[0, 'participantId']}_{session_df.loc[0, "taskId"]}.csv', index=False, encoding='utf-8-sig')
-    events_df.to_csv(f'res/csv/[csv_raw_event]_{session_df.loc[0, 'participantId']}_{session_df.loc[0, "taskId"]}.csv', index=False, encoding='utf-8-sig')
+    if csv_save:
+        # csv로 저장하기
+        session_df.to_csv(f'res/csv/[csv_raw_session]_{session_df.loc[0, 'participantId']}_{session_df.loc[0, "taskId"]}.csv', index=False, encoding='utf-8-sig')
+        events_df.to_csv(f'res/csv/[csv_raw_event]_{session_df.loc[0, 'participantId']}_{session_df.loc[0, "taskId"]}.csv', index=False, encoding='utf-8-sig')
 
     return session_df, events_df
