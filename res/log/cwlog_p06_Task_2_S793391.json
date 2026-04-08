@@ -1,6 +1,6 @@
 {
-  "endTime": null,
-  "endTimeMs": null,
+  "endTime": "26-04-07 18:43:22",
+  "endTimeMs": 1775555002102,
   "endedUrl": "https://www.q-net.or.kr/crf006.do?id=crf00603&tabIdx=3&gradeType=31&gSite=Q&gId=",
   "eventCount": 216,
   "events": [
@@ -4816,6 +4816,6 @@
   "startTimeMs": 1775554729430,
   "startedUrl": "https://www.q-net.or.kr/man001.do?gSite=Q",
   "tabId": 621367822,
-  "taskId": "02",
+  "taskId": "Task_2",
   "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36"
 }
